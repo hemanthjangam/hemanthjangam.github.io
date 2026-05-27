@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hemanth Jangam — Backend Developer</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -708,6 +709,7 @@
             .hero-visual { order: -1; }
             .photo-frame { width: 280px; height: 320px; }
             section { padding: 60px 24px; }
+            .exp-card { grid-template-columns: 1fr; gap: 24px; padding: 32px; }
             .projects-grid { grid-template-columns: 1fr; }
             .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
             .skills-grid { grid-template-columns: 1fr; }
@@ -715,6 +717,32 @@
             .edu-grid { grid-template-columns: 1fr; }
             .contact-section { padding: 60px 24px; }
             footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+        }
+        @media (max-width: 600px) {
+            nav { padding: 14px 16px; }
+            .nav-badge { font-size: 10px; padding: 6px 10px; }
+            .hero { padding: 92px 16px 48px; gap: 36px; }
+            .hero-name { font-size: clamp(42px, 18vw, 52px); letter-spacing: -2px; }
+            .hero-stats { gap: 18px; margin-bottom: 36px; }
+            .stat-num { font-size: 28px; }
+            .photo-frame { width: min(100%, 280px); height: auto; aspect-ratio: 7 / 8; }
+            .photo-dots { display: none; }
+            .photo-tag { right: 0; }
+            section { padding: 48px 16px; }
+            .section-header { gap: 14px; margin-bottom: 36px; }
+            .section-title { font-size: 34px; letter-spacing: -1px; }
+            .exp-card, .project-card, .skill-group, .edu-card { padding: 24px; }
+            .project-card.featured { gap: 28px; }
+            .cert-card { padding: 22px 20px; gap: 14px; flex-wrap: wrap; }
+            .contact-section { padding: 48px 16px; }
+            .contact-links { gap: 12px; }
+            .contact-link { width: 100%; justify-content: center; }
+            footer { padding: 20px 16px; }
+        }
+        @media (hover: none), (pointer: coarse) {
+            body, .project-card, .cert-card, .btn-primary, .btn-secondary { cursor: auto; }
+            a { cursor: pointer; }
+            .cursor, .cursor-ring { display: none; }
         }
     </style>
 </head>
@@ -730,6 +758,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#certs">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-badge">Available for work</div>
@@ -746,20 +775,20 @@
             <span class="line2">Jangam</span>
         </h1>
         <p class="hero-role">
-            Software Engineer building scalable, high-quality backend systems with Java &amp; Spring Boot. AWS Certified. Passionate about distributed systems, clean architecture, and real-world AI integrations.
+            Software Engineer building scalable, high-quality backend systems with Java &amp; Spring Boot. Certified in AWS Cloud, Java, backend development, and cybersecurity foundations. Passionate about distributed systems, clean architecture, and real-world AI integrations.
         </p>
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-num">4+</span>
-                <span class="stat-label">Projects Built</span>
+                <span class="stat-num">5+</span>
+                <span class="stat-label">Projects</span>
             </div>
             <div class="stat-item">
-                <span class="stat-num">130+</span>
-                <span class="stat-label">LeetCode Solved</span>
+                <span class="stat-num">200+</span>
+                <span class="stat-label">DSA Problems</span>
             </div>
             <div class="stat-item">
-                <span class="stat-num">AWS</span>
-                <span class="stat-label">Certified</span>
+                <span class="stat-num">1x</span>
+                <span class="stat-label">AWS Certified</span>
             </div>
         </div>
         <div class="hero-cta">
@@ -846,10 +875,32 @@
             </ul>
         </div>
 
-        <!-- EventMate -->
+        <!-- Skill Forge -->
         <div class="project-card reveal">
             <div class="project-num">
                 <span>02 / FEATURED</span>
+                <a href="https://github.com/hemanthjangam/skill-forge" target="_blank" class="project-link">GitHub ↗</a>
+            </div>
+            <div class="project-subtitle">Learning Platform</div>
+            <div class="project-name">Skill Forge</div>
+            <p class="project-desc">
+                Role-based technical upskilling platform with course moderation, adaptive assessments, AI tutoring, learner progress, badges, certificates, and leaderboards.
+            </p>
+            <div class="project-tech">
+                <span class="tech-pill hot">Spring Boot</span>
+                <span class="tech-pill hot">React</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">JWT</span>
+                <span class="tech-pill">Gemini AI</span>
+                <span class="tech-pill">Ollama</span>
+                <span class="tech-pill">Flyway</span>
+            </div>
+        </div>
+
+        <!-- EventMate -->
+        <div class="project-card reveal">
+            <div class="project-num">
+                <span>03 / FEATURED</span>
                 <a href="https://github.com/hemanthjangam/event-mate" target="_blank" class="project-link">GitHub ↗</a>
             </div>
             <div class="project-subtitle">Event Platform</div>
@@ -871,7 +922,7 @@
         <!-- Chat App -->
         <div class="project-card reveal">
             <div class="project-num">
-                <span>03 / REALTIME</span>
+                <span>04 / REALTIME</span>
                 <a href="https://github.com/hemanthjangam/chat-app" target="_blank" class="project-link">GitHub ↗</a>
             </div>
             <div class="project-subtitle">Real-Time Messaging</div>
@@ -891,9 +942,9 @@
         </div>
 
         <!-- URL Shortener -->
-        <div class="project-card reveal" style="grid-column: span 2;">
+        <div class="project-card reveal">
             <div class="project-num">
-                <span>04 / UTILITY</span>
+                <span>05 / UTILITY</span>
                 <a href="https://github.com/hemanthjangam/url-shortener" target="_blank" class="project-link">GitHub ↗</a>
             </div>
             <div class="project-subtitle">REST API</div>
